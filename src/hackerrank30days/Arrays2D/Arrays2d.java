@@ -8,7 +8,7 @@ import java.util.Scanner;
  * Created by ramon on 11-01-16.
  */
 public class Arrays2d {
-    static int suma_mayor = 0;
+    static Integer suma_mayor = Integer.MIN_VALUE;
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int[][] matrix = new int[6][6];
@@ -21,17 +21,19 @@ public class Arrays2d {
         }
 
 
-
         for (int i = 1; i <matrix.length-1 ; i++) {
             for (int j = 1; j <matrix.length-1 ; j++) {
+
                 aux = submatrix(matrix,i,j);
-                if(suma(aux)>suma_mayor){
-                    suma_mayor=suma(aux);
+                int suma = suma(aux);
+                if(suma>suma_mayor){
+                    suma_mayor=suma;
                 }
+
             }
         }
 
-        System.out.println("SUMA MAYOR: "+suma_mayor);
+        System.out.println(suma_mayor);
 
     }
 
@@ -61,5 +63,6 @@ public class Arrays2d {
 
         return aux;
     }
+
 
 }
