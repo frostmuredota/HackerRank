@@ -16,7 +16,7 @@ public class Arrays2d {
 
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix.length; j++) {
-                matrix[i][j] = (int) (Math.random() * 10);
+                matrix[i][j] = sc.nextInt();
             }
         }
 
