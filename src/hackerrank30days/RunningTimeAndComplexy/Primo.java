@@ -10,27 +10,31 @@ public class Primo {
         Scanner sc = new Scanner(System.in);
         int number = sc.nextInt();
         for (int i = 0; i <number ; i++) {
-           isPrime(sc.nextInt());
+          if(isPrime(sc.nextInt())){
+              System.out.println("Prime");
+          }else{
+              System.out.println("Not prime");
+          }
         }
     }
-
-    public static void isPrime(int n){
-        int a = 0;
-        String answer = "Prime";
-        for (int i = 1; i <=n+1 ; i++) {
-            if(a>2){
-                answer="Not prime";
-                break;
-            }else{
-                if(n%i==0){
-                    a++;
-                }
-            }
-        }
-        System.out.println(answer);
-
+public static boolean isPrime(int n){
+    boolean result = true;
+    if(n == 1 || n == 0)
+        result = false;
+    if(n == 2)
+        return true;
+    if(n == 3)
+        return true;
+    int sqrt = (int) Math.sqrt(n) + 1;
+    for(int j = 2; j < sqrt;j++){
+        if(n % j == 0)
+            result = false;
     }
 
+
+    return result;
+
+}
 
 
 }
